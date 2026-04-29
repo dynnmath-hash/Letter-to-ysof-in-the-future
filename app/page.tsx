@@ -105,11 +105,13 @@ export default function Page() {
         throw new Error(result.message ?? "Không thể gửi thư lúc này.");
       }
 
+      const newData = result.data;
+
       setLetters((prev) => [
         {
-          id: result.data.id,
-          content: result.data.content,
-          createdAt: result.data.created_at,
+          id: newData.id,
+          content: newData.content,
+          createdAt: newData.created_at,
         },
         ...prev,
       ]);
